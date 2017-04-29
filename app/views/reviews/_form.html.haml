@@ -1,0 +1,3 @@
+= simple_form_for [@serial, @season, @episode, @episode.reviews.build], url: leave_review_path do |f|
+  = f.input :text, label: 'Add a comment:'
+  = f.button :submit

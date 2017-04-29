@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'awesome_print', require:'ap'
 # Use HAML
 gem 'hamlit'
+# Simple form gem
+gem 'simple_form'
 # File attachment management for ActiveRecord
 gem "paperclip", "~> 5.0.0"
 # Vanity URLs for models
