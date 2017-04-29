@@ -22,9 +22,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'awesome_print', require:'ap'
 # Use HAML
 gem 'hamlit'
-# File attachment management for ActiveRecord 
+# File attachment management for ActiveRecord
 gem "paperclip", "~> 5.0.0"
-
+# Vanity URLs for models
+gem 'friendly_id', '~> 5.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -57,6 +57,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    friendly_id (5.0.5)
+      activerecord (>= 4.0.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hamlit (2.8.0)
@@ -173,6 +175,7 @@ DEPENDENCIES
   awesome_print
   byebug
   coffee-rails (~> 4.2)
+  friendly_id (~> 5.0.0)
   hamlit
   jbuilder (~> 2.5)
   jquery-rails
