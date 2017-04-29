@@ -4,7 +4,7 @@ class SerialsController < ApplicationController
   end
 
   def show
-    @serial = Serial.find_by_name(params[:name])
+    @serial = Serial.find(params[:id])
   end
 
 end
