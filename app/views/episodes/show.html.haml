@@ -3,3 +3,6 @@
 = link_to 'Back', serial_season_path(@serial, @season)
 
 = render "reviews/form"
+
+- @episode.reviews.each do |review|
+  = review.text

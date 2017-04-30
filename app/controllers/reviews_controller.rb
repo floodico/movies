@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     @review = @episode.reviews.create(review_params)
 
     if @review.save
-      redirect_to @episode
+      redirect_to :back
     else
       render 'form'
     end
