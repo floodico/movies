@@ -1,3 +1,11 @@
-%h1 ALL SERIALS
--@serials.each do |serial|
-  %li= link_to "#{serial.name}", serial
+%br
+
+#grid
+  - @serials.each do |serial|
+    #card.card
+      .card-image.waves-effect.waves-block.waves-light
+        %img
+          = link_to (image_tag serial.picture), serial
+      .card-content
+        %span.card-title.center
+          = link_to "#{serial.name}", serial, class: "teal-text"

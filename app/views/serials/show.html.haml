@@ -1,4 +1,12 @@
-- @serial.seasons.each do |season|
-  %li= link_to "#{season.season_number}", serial_season_path(@serial, season)
+%br
 
-= link_to 'Back', root_path
+.container
+  %ul.collection.teal-text
+    %li.collection-item
+      %h5.center Seasons
+    - @serial.seasons.each do |season|
+      %li.collection-item.center
+
+        %p= link_to "#{season.season_number} season", serial_season_path(@serial, season), class: "teal-text"
+
+  = link_to 'Back', root_path, class: 'chip teal-text'

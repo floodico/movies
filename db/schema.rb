@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170429160641) do
+ActiveRecord::Schema.define(version: 20170430175256) do
 
   create_table "episodes", force: :cascade do |t|
     t.string   "name"
@@ -55,9 +55,13 @@ ActiveRecord::Schema.define(version: 20170429160641) do
 
   create_table "serials", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "slug"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
     t.index ["name"], name: "index_serials_on_name", unique: true
     t.index ["slug"], name: "index_serials_on_slug", unique: true
   end

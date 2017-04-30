@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Serials
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  .ilike-dark-container
+    %body
+      %nav
+        .container
+          .nav-wrapper
+            %a.brand-logo{:href => "#"} Logo
+            %ul#nav-mobile.right.hide-on-med-and-down
+              %li
+                %a{:href => "sass.html"} Sass
+              %li
+                %a{:href => "badges.html"} Components
+              %li
+                %a{:href => "collapsible.html"} JavaScript
+
+      = yield
