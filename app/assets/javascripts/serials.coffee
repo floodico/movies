@@ -6,4 +6,3 @@
    $('#grid').imagesLoaded ->
      $('#grid').masonry
        itemSelector: '#card'
-       isFitWidth: true

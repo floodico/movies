@@ -1,3 +1,4 @@
 = simple_form_for [@serial, @episode, @episode.reviews.build] do |f|
+  = f.error_notification message: "Can't be blank"
   = f.input :text, label: 'Leave a review:'
   = f.button :submit

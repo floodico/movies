@@ -5,11 +5,8 @@ class ReviewsController < ApplicationController
   def create
     @review = @episode.reviews.create(review_params)
 
-    if @review.save
-      redirect_to :back
-    else
-      render 'form'
-    end
+    flash[:error] = "Review can't be blank!" unless @review.save
+    redirect_to :back
   end
 
   private
