@@ -26,9 +26,12 @@ $secondary-color: color("teal", "base") !default;
 
 #grid {
   margin: 0 auto;
-  #card {
-      margin: 10px;
-      width: 350px;
-      border-radius: 5px;
-  }
+  width: 100%;
+}
+
+#card {
+    margin: 10px;
+    width: 250px;
+    border-radius: 7px;
+    text-align: center;
 }

@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
  $ ->
-   $('#grid').masonry
-    itemSelector: '#card'
-    isFitWidth: true
+   $('#grid').imagesLoaded ->
+     $('#grid').masonry
+       itemSelector: '#card'
+       isFitWidth: true
