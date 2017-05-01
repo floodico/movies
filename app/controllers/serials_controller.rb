@@ -3,8 +3,4 @@ class SerialsController < ApplicationController
     @serials = Serial.all
   end
 
-  def show
-    @serial = Serial.friendly.find(params[:serial_id])
-  end
-
 end

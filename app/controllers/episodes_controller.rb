@@ -2,6 +2,7 @@ class EpisodesController < ApplicationController
   before_action :find_serial
 
   def show
+    @episodes = @serial.episodes
     @episode = @serial.episodes.friendly.find(params[:episode_id])
   end
 
