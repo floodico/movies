@@ -16,7 +16,7 @@
  */
 
 @import "materialize/components/color";
-$primary-color: color("teal", "base") !default;
+$primary-color: color("teal", "lighten-2") !default;
 $secondary-color: color("teal", "base") !default;
 @import "materialize";
 

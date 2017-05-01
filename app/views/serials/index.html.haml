@@ -2,9 +2,9 @@
 
 #grid
   - @serials.each do |serial|
-    #card.card
+    #card.card.teal.lighten-2
       .card-image.waves-effect.waves-block.waves-light
         = link_to (image_tag serial.picture), serial
       .card-content
         %span.card-title.center
-          = link_to "#{serial.name}", serial, class: "teal-text"
+          = link_to "#{serial.name}", serial, class: "white-text"

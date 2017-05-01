@@ -1,5 +1,0 @@
-%p= @season.season_number
-- @season.episodes.each do |episode|
-  %li=link_to "#{episode.name}", serial_season_episode_path(@serial, @season, episode)
-
-= link_to 'Back', serial_path(@serial)

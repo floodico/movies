@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170430175256) do
+ActiveRecord::Schema.define(version: 20170501124954) do
 
   create_table "episodes", force: :cascade do |t|
     t.string   "name"
@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 20170430175256) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
-    t.integer  "season_id"
     t.string   "slug"
+    t.integer  "serial_id"
+    t.integer  "episode_number"
+    t.index ["serial_id"], name: "index_episodes_on_serial_id"
     t.index ["slug"], name: "index_episodes_on_slug", unique: true
   end
 
@@ -42,15 +44,7 @@ ActiveRecord::Schema.define(version: 20170430175256) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "episode_id"
-  end
-
-  create_table "seasons", force: :cascade do |t|
-    t.integer  "season_number"
-    t.integer  "serial_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "slug"
-    t.index ["slug"], name: "index_seasons_on_slug", unique: true
+    t.index ["episode_id"], name: "index_reviews_on_episode_id"
   end
 
   create_table "serials", force: :cascade do |t|

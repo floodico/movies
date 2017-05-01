@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   before_action :find_serial
-  before_action :find_season
   before_action :find_episode
 
   def create
@@ -19,12 +18,8 @@ class ReviewsController < ApplicationController
     @serial = Serial.friendly.find(params[:serial_id])
   end
 
-  def find_season
-    @season = @serial.seasons.friendly.find(params[:season_id])
-  end
-
   def find_episode
-    @episode = @season.episodes.friendly.find(params[:episode_id])
+    @episode = @serial.episodes.friendly.find(params[:episode_id])
   end
 
   def review_params
