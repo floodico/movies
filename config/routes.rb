@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get '/:serial_id/:episode_id', to: 'episodes#show', as: :serial_episode
 
   #serial_episode_reviews POST /serials/:serial_id/episodes/:episode_id/reviews(.:format) || reviews#create #

@@ -38,6 +38,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass'
 # Use JavaScript grid layout library
 gem 'masonry-rails'
+# Active Admin is a framework for creating administration style interfaces
+gem 'activeadmin', github: 'activeadmin'
+gem 'arctic_admin'
+# Authenticate
+gem 'devise'
+
 
 
 group :development, :test do
