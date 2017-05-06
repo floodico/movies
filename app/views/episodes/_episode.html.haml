@@ -1,0 +1,23 @@
+#episode
+  .teal-text
+    %h3= "#{@serial.name}. #{@episode.name}"
+  = video_tag @episode.video, :size => "700x500", :controls => true
+
+  %br
+  %br
+  #change_episode
+    - @episodes.each do |episode|
+      - if episode == @episode
+        = link_to "#{episode.episode_number}", serial_episode_path(@serial, episode), class: "btn disabled"
+      - else
+        = link_to "#{episode.episode_number}", serial_episode_path(@serial, episode), remote: true, class: "btn"
+
+  %br
+  %br
+  %br
+  .container
+    = render "reviews/form"
+    %ul
+      - @episode.reviews.reverse.each do |review|
+        %li= review.text
+        %li.divider

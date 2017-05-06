@@ -1,9 +1,8 @@
-.transitions-enabled
-  #grid
-    - @serials.each do |serial|
-      #card.card.teal.lighten-2
-        .card-image.waves-effect.waves-block.waves-light
-          = link_to (image_tag serial.picture), serial_episode_path(serial, serial.episodes.first)
-        .card-content
-          %span.card-title.center
-            = link_to "#{serial.name}", serial_episode_path(serial, serial.episodes.first), class: "white-text"
+#grid
+  - @serials.each do |serial|
+    #card.card.teal.lighten-2
+      .card-image.waves-effect.waves-block.waves-light
+        = link_to (image_tag serial.picture), serial_episode_path(serial, serial.episodes.first)
+      .card-content
+        %span.card-title.center
+          = link_to "#{serial.name}", serial_episode_path(serial, episode_id: serial.episodes.first.id ), class: "white-text"

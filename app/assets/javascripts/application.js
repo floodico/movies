@@ -22,3 +22,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('click', '#change_episode a[data-remote=true]', function(e) {
+  history.pushState({}, '', $(this).attr('href'));
+});

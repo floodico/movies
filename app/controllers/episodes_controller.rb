@@ -4,6 +4,11 @@ class EpisodesController < ApplicationController
   def show
     @episodes = @serial.episodes
     @episode = @serial.episodes.friendly.find(params[:episode_id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private
