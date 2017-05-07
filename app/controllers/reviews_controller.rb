@@ -5,8 +5,10 @@ class ReviewsController < ApplicationController
   def create
     @review = @episode.reviews.create(review_params)
 
-    flash[:error] = "Review can't be blank!" unless @review.save
-    redirect_to :back
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private
