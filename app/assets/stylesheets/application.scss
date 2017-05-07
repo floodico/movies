@@ -30,13 +30,12 @@ $secondary-color: color("teal", "base") !default;
   @extend .teal, .lighten-5;
 }
 
-#grid {
+.masonry-grid {
   margin: 0 auto;
   width: 100%;
-}
-
-#card {
-    margin: 10px;
-    width: 250px;
-    border-radius: 7px;
+  #card {
+      margin: 10px;
+      width: 15%;
+      border-radius: 7px;
+  }
 }
