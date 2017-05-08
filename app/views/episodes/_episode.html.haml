@@ -16,10 +16,10 @@
   %br
   %br
   .container
-    #reviews_section
-      - @episode.reviews.each do |review|
-        %ul
+    #review_form
+      = render "reviews/form"
+    %ul
+      #reviews_section
+        - @episode.reviews.reverse.each do |review|
           %li= review.text
           %li.divider
-    #review_form_section
-      = render "reviews/form"

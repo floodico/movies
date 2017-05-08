@@ -6,15 +6,26 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  .ilike-dark-container
     %body
-      %nav
-        .container
-          .nav-wrapper
-            %a.brand-logo= link_to 'FMOVIES', root_path
-            %ul#nav-mobile.right.hide-on-med-and-down
-              
-      .center.red-text
-        - flash.each do |name, msg|
-          = content_tag(:div, msg, class: "alert")
-      = yield
+      .ilike-dark-container
+        %nav
+          .container
+            .nav-wrapper
+              %a.brand-logo= link_to 'FMOVIES', root_path
+              %ul#nav-mobile.right.hide-on-med-and-down
+
+          .center.red-text
+            - flash.each do |name, msg|
+              = content_tag(:div, msg, class: "alert")
+
+          = yield
+
+        %footer.page-footer
+          .container.center
+            %h5.white-text FMOVIES
+            %p.white-text  Only best content
+
+          .footer-copyright
+            .container.white-text
+              ©  Made by
+              %a.white-text.text-lighten-1{:href => "http://github.com/floodico"} floodico
