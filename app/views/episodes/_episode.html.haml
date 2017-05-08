@@ -11,17 +11,3 @@
         = link_to "#{episode.episode_number}", serial_episode_path(@serial, episode), class: "btn disabled"
       - else
         = link_to "#{episode.episode_number}", serial_episode_path(@serial, episode), remote: true, class: "btn"
-
-  %br
-  %br
-  %br
-  .container
-    = link_to 'Leave a comment', "javascript:;", id: "reviews-link", :remote => true, class: 'btn purple-text waves-effect chip white waves-grey'
-    #leave_review
-      #review_form
-        = render "reviews/form"
-      %ul
-        #reviews_section
-          - @episode.reviews.reverse.each do |review|
-            %li= review.text
-            %li.divider

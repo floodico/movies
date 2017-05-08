@@ -7,5 +7,4 @@ class Episode < ApplicationRecord
   validates_attachment_content_type :video, :content_type => ['video/mp4']
 
   belongs_to :serial
-  has_many :reviews
 end
