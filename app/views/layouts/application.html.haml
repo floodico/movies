@@ -14,11 +14,11 @@
               %a.brand-logo= link_to 'FMOVIES', root_path
               %ul#nav-mobile.right.hide-on-med-and-down
 
-          .center.red-text
-            - flash.each do |name, msg|
-              = content_tag(:div, msg, class: "alert")
+        .center.red-text
+          - flash.each do |name, msg|
+            = content_tag(:div, msg, class: "alert")
 
-          = yield
+        = yield
 
         %footer.page-footer
           .container.center
