@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Serials
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -13,7 +14,10 @@
             .nav-wrapper
               %a.brand-logo= link_to 'FMOVIES', root_path
               %ul#nav-mobile.right.hide-on-med-and-down
+                %li= link_to 'Films', films_path
+                %li= link_to 'Serials', serials_path
 
+        %br
         .center.red-text
           - flash.each do |name, msg|
             = content_tag(:div, msg, class: "alert")

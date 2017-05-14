@@ -1,0 +1,7 @@
+.container
+  %a.breadcrumb= link_to 'Home', root_path, class: 'teal-text'
+  %a.breadcrumb= link_to 'Films', films_path, class: 'teal-text'
+  %a.breadcrumb= link_to "#{@film.name}", @film, class: 'teal-text'
+
+  .center
+    = video_tag @film.video, :size => "700x500", :controls => true

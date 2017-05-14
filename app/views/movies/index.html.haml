@@ -1,0 +1,18 @@
+.masonry-grid
+  - @movies.each do |movie|
+    #card.card.teal.lighten-2
+      - if movie.is_a?(Serial)
+        .card-image.waves-effect.waves-block.waves-light
+          = link_to (image_tag movie.picture), serial_episode_path(movie, movie.episodes.first)
+          %a.btn-large.btn-floating.halfway-fab.teal.lighten-2
+            .center
+              %h6= movie.episodes.count
+        .card-content
+          %span.card-title.center
+            = link_to "#{movie.name}", serial_episode_path(movie, movie.episodes.first), class: "white-text"
+      - else
+        .card-image.waves-effect.waves-block.waves-light
+          = link_to (image_tag movie.picture), movie
+        .card-content
+          %span.card-title.center
+            = link_to "#{movie.name}", movie, class: "white-text"

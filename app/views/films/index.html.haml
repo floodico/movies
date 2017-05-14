@@ -1,0 +1,8 @@
+.masonry-grid
+  - @films.each do |film|
+    #card.card.teal.lighten-2
+      .card-image.waves-effect.waves-block.waves-light
+        = link_to (image_tag film.picture), film
+      .card-content
+        %span.card-title.center
+          = link_to "#{film.name}", film, class: "white-text"

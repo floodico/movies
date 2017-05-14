@@ -1,4 +1,8 @@
 .container
+  %a.breadcrumb= link_to 'Home', root_path, class: 'teal-text'
+  %a.breadcrumb= link_to 'Serials', serials_path, class: 'teal-text'
+  %a.breadcrumb= link_to "#{@serial.name}", serial_episode_path(@serial, @serial.episodes.first), class: 'teal-text'
+
   .center
     = render 'episode'
 

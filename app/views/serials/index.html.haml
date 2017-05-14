@@ -1,8 +1,11 @@
-.masonry-grid.transitions-enabled
+.masonry-grid
   - @serials.each do |serial|
     #card.card.teal.lighten-2
       .card-image.waves-effect.waves-block.waves-light
         = link_to (image_tag serial.picture), serial_episode_path(serial, serial.episodes.first)
+        %a.btn-large.btn-floating.halfway-fab.waves-effect.waves-light.red.teal.lighten-2
+          .center
+            %h6= serial.episodes.count
       .card-content
         %span.card-title.center
-          = link_to "#{serial.name}", serial_episode_path(serial, episode_id: serial.episodes.first.id ), class: "white-text"
+          = link_to "#{serial.name}", serial_episode_path(serial, serial.episodes.first), class: "white-text"

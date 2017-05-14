@@ -16,6 +16,5 @@ class EpisodesController < ApplicationController
   def find_serial
     @serial = Serial.friendly.find(params[:serial_id])
   end
-
-
+  
 end
