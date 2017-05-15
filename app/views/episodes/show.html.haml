@@ -12,7 +12,7 @@
     = link_to 'Leave a comment', "javascript:;", id: "reviews-link", :remote => true, class: 'btn purple-text waves-effect chip white waves-grey'
     #leave_review
       #review_form
-        = render "reviews/form"
+        = render "reviews/form", movie: @serial, review: @review
       %ul
         #reviews_section
           - @serial.reviews.reverse.each do |review|

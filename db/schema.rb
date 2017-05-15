@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514113246) do
+ActiveRecord::Schema.define(version: 20170514125234) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -88,10 +88,11 @@ ActiveRecord::Schema.define(version: 20170514113246) do
 
   create_table "reviews", force: :cascade do |t|
     t.string   "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "serial_id"
-    t.index ["serial_id"], name: "index_reviews_on_serial_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "reviewable_id"
+    t.string   "reviewable_type"
+    t.index ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
   end
 
   create_table "serials", force: :cascade do |t|

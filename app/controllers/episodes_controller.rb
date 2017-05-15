@@ -1,5 +1,6 @@
 class EpisodesController < ApplicationController
   before_action :find_serial
+  before_action :set_review
 
   def show
     @episodes = @serial.episodes
@@ -16,5 +17,9 @@ class EpisodesController < ApplicationController
   def find_serial
     @serial = Serial.friendly.find(params[:serial_id])
   end
-  
+
+  def set_review
+    @review = @serial.reviews.new
+  end
+
 end

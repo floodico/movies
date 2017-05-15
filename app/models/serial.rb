@@ -7,5 +7,5 @@ class Serial < ApplicationRecord
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   has_many :episodes
-  has_many :reviews
+  has_many :reviews, as: :reviewable
 end

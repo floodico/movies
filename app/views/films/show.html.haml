@@ -5,3 +5,16 @@
 
   .center
     = video_tag @film.video, :size => "700x500", :controls => true
+
+    %br
+    %br
+    %br
+    = link_to 'Leave a comment', "javascript:;", id: "reviews-link", :remote => true, class: 'btn purple-text waves-effect chip white waves-grey'
+    #leave_review
+      #review_form
+        = render "reviews/form", movie: @film, review: @review
+      %ul
+        #reviews_section
+          - @film.reviews.reverse.each do |review|
+            %li= review.text
+            %li.divider

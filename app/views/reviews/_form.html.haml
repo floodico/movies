@@ -1,4 +1,4 @@
-= simple_form_for [@serial, @serial.reviews.build], remote: true do |f|
+= simple_form_for [movie, review], remote: true do |f|
   = f.error_notification message: "Can't be blank"
   = f.input :text, label: 'Leave a review:'
   = f.button :submit

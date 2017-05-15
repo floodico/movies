@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
   validates :text, presence: true
 
-  belongs_to :serial
+  belongs_to :reviewable, polymorphic: true
 end

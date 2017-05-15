@@ -5,5 +5,6 @@ class FilmsController < ApplicationController
 
   def show
     @film = Film.friendly.find(params[:id])
+    @review = @film.reviews.new
   end
 end
