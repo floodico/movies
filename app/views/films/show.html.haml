@@ -3,18 +3,33 @@
   %a.breadcrumb= link_to 'Films', films_path, class: 'teal-text'
   %a.breadcrumb= link_to "#{@film.name}", @film, class: 'teal-text'
 
-  .center
-    = video_tag @film.video, :size => "700x500", :controls => true
+  .right
+    .star-rating{'data-score' => "#{@avg_review}"}
 
-    %br
-    %br
-    %br
-    = link_to 'Leave a comment', "javascript:;", id: "reviews-link", :remote => true, class: 'btn purple-text waves-effect chip white waves-grey'
-    #leave_review
-      #review_form
-        = render "reviews/form", movie: @film, review: @review
-      %ul
-        #reviews_section
-          - @film.reviews.reverse.each do |review|
-            %li= review.text
-            %li.divider
+  .center
+    = video_tag @film.video, :size => "900x550", :controls => true
+
+  %br
+  %br
+  %br
+  .center
+    = link_to 'Leave a review', "javascript:;", id: "reviews-link", :remote => true, class: 'btn teal-text waves-effect chip white waves-grey'
+  #leave_review
+    #review_form
+      = render "reviews/form", movie: @film, review: @review
+    %ul
+      #reviews_section
+        - @film.reviews.reverse[1..-1].each do |review|
+          %li
+            .star-rating{'data-score' => "#{review.rating}"}
+          %li= review.text
+          %li.divider
+
+:javascript
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });

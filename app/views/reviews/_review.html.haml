@@ -1,4 +1,15 @@
 #review
   %ul
-    %li.divider
+    %li
+      .star-rating{"data-score" => "#{review.rating}"}
     %li= review.text
+    %li.divider
+
+:javascript
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });

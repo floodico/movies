@@ -3,18 +3,33 @@
   %a.breadcrumb= link_to 'Serials', serials_path, class: 'teal-text'
   %a.breadcrumb= link_to "#{@serial.name}", serial_episode_path(@serial, @serial.episodes.first), class: 'teal-text'
 
+  .right
+    .star-rating{'data-score' => "#{@avg_review}"}
+
   .center
     = render 'episode'
 
-    %br
-    %br
-    %br
-    = link_to 'Leave a comment', "javascript:;", id: "reviews-link", :remote => true, class: 'btn purple-text waves-effect chip white waves-grey'
-    #leave_review
-      #review_form
-        = render "reviews/form", movie: @serial, review: @review
-      %ul
-        #reviews_section
-          - @serial.reviews.reverse.each do |review|
-            %li= review.text
-            %li.divider
+  %br
+  %br
+  %br
+  .center
+    = link_to 'Leave a review', "javascript:;", id: "reviews-link", :remote => true, class: 'btn teal-text waves-effect chip white waves-grey'
+  #leave_review
+    #review_form
+      = render "reviews/form", movie: @serial, review: @review
+    %ul
+      #reviews_section
+        - @serial.reviews.reverse[1..-1].each do |review|
+          %li
+            .star-rating{'data-score' => "#{review.rating}"}
+          %li= review.text
+          %li.divider
+
+:javascript
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });

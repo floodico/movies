@@ -12,6 +12,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.raty
 //= require materialize-sprockets
 //= require masonry/jquery.masonry
 //= require masonry/jquery.event-drag

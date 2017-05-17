@@ -1,4 +1,12 @@
 = simple_form_for [movie, review], remote: true do |f|
-  = f.error_notification message: "Can't be blank"
-  = f.input :text, label: 'Leave a review:'
+  #rating-form
+    %label Rating
+  %br  
+  = f.input :text, label: 'Comment'
   = f.button :submit
+
+:javascript
+  $('#rating-form').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
